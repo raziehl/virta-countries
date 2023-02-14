@@ -44,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "@types/carbon__icons-react": "^11.15.0",
     "@types/react-router-dom": "^5.3.3"
   }
 }
