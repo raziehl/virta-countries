@@ -14,14 +14,23 @@ export class HttpService {
     });
   }
 
-  async getCountries() {
-    const res = await this.axios.post<CountryQueryResponse>('/public', JSON.stringify({"operationName":null,"variables":{},"query":"{\n countryResolver {\ncode\n name\n iso3\n otpInAppEnabled\n dialCode\n defaultTimezone\n}\n}\n"}));
+  async getCountries(): Promise<CountryDto[]> {
+    const res = await this.axios.post<CountryQueryResponse>('/public', JSON.stringify({
+      "operationName": null,
+      "variables": {},
+      "query": `{
+        countryResolver {
+          code
+          name
+          iso3
+          otpInAppEnabled
+          dialCode
+          defaultTimezone
+        }
+      }`
+    }));
 
-    // console.log(JSON.parse(res.data as any));
-    
-    console.log(new CountryQueryResponse(JSON.parse(res.data as any)));
-
-    return res.data;
+    return new CountryQueryResponse(JSON.parse(res.data as any)).data.countryResolver;
   }
 
   static getInstance() {
