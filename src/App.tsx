@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
-import About from './about/about';
+import About from './info/info';
 import './App.css';
 
 

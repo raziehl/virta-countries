@@ -1,10 +1,10 @@
 import React from 'react';
 import { CharacterDecimal } from '@carbon/icons-react';
 
-function About() {
+function Info() {
   return <div>
     <h2>About Page Test</h2>
     <CharacterDecimal />
   </div>
 }
-export default About;
+export default Info;
