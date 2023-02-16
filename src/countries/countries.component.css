@@ -1,0 +1,33 @@
+
+.country {
+  display: flex;
+  width: 100%;
+  background-color: white;
+  margin-bottom: 5px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.status-svg {
+  flex: 0.025;
+}
+
+.left-content {
+  display: flex;
+  flex: 0.90;
+  text-align: left;
+}
+
+.right-content {
+  flex: 0.05;
+  
+}
+
+.country-flag {
+  margin-right: 17.5px;;
+}
+
+/* 
+.status {
+  flex: 1;
+} */

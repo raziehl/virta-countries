@@ -9,6 +9,7 @@
   position: sticky;
   float: right;
   bottom: 0;
+  z-index: -1;
 }
 
 .page-title {
