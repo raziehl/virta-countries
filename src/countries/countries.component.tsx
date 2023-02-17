@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Misuse } from '@carbon/icons-react'
+import { CheckmarkFilled, Misuse } from '@carbon/icons-react'
 import Flags from 'country-flag-icons/react/3x2';
 
 import { http } from '../core';
@@ -56,7 +56,7 @@ class CountriesComponent extends Component<any, { countries: CountryDto[] }> {
 
               <div className='status'>
                 <div className='country-status'>
-                  <Misuse />
+                  { e.otpInAppEnabled ? <CheckmarkFilled size={24} style={{ color: '#00AD09' }}/> : <Misuse size={24} style={{ color: 'red' }} /> }
                 </div>
               </div>
             </div>

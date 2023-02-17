@@ -41,12 +41,13 @@
 
 .country-code {
   position: relative;
-  top: 30%;
+  color: #5F5F5F;
+  top: 35%;
 }
 
 .country-status {
   position: relative;
-  top: 30%;
+  top: 25%;
 }
 
 /* 
