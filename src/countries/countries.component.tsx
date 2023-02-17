@@ -19,9 +19,8 @@ class CountriesComponent extends Component<any, { countries: CountryDto[], isHan
   
 
   render() {
-    console.log(this.state?.isHandset);
     return <div className="countries-component left-container">
-      <h1>Compatible Countries</h1>
+      { this.state?.isHandset ? '' : <h1>Compatible Countries</h1> }
       <div>
         {
           this.state?.countries.map((e, i) => {
@@ -51,7 +50,7 @@ class CountriesComponent extends Component<any, { countries: CountryDto[], isHan
                 </div>
               </div>
 
-              { !this.state.isHandset ? <div className='right-content'>
+              { !this.state?.isHandset ? <div className='right-content'>
                 <div className='country-code'>
                   Country Code: { e.code }
                 </div>
