@@ -7,24 +7,21 @@ import { CountryDto } from '../core/dtos';
 
 import './countries.component.css';
 
-
-class CountriesComponent extends Component<any, { countries: CountryDto[] }> {
+class CountriesComponent extends Component<any, { countries: CountryDto[], isHandset: boolean }> {
 
   async componentDidMount() {
     this.setState({
-      countries: await http.getCountries()
+      countries: await http.getCountries(),
+      isHandset: window.innerWidth < 768 ? true : false,
     });
   }
 
+  
+
   render() {
+    console.log(this.state?.isHandset);
     return <div className="countries-component left-container">
       <h1>Compatible Countries</h1>
-
-
-      {/* <div>
-        { getUnicodeFlagIcon('US') }
-        <US />
-      </div> */}
       <div>
         {
           this.state?.countries.map((e, i) => {
@@ -33,7 +30,7 @@ class CountriesComponent extends Component<any, { countries: CountryDto[] }> {
             return <div className="country" key={e.code}>
               
               <div className='status-svg'>
-                <svg width="4" height="48" viewBox="0 0 4 48" fillRule='evenodd' xmlns="http://www.w3.org/2000/svg">
+                <svg width="4" height={ this.state.isHandset ? '70' : '48' } viewBox="0 0 4 48" fillRule='evenodd' xmlns="http://www.w3.org/2000/svg">
                   <path d="M0 0C2.20914 0 4 1.79086 4 4V44C4 46.2091 2.20914 48 0 48V0Z" fill={ e.otpInAppEnabled ? '#00AD09' : '#FF0000' }/>
                 </svg>
               </div>
@@ -45,14 +42,20 @@ class CountriesComponent extends Component<any, { countries: CountryDto[] }> {
                 <div className='country-name'>
                   <div>{ e.name }</div>
                   <div style={{ color: '#5F5F5F' }}>{ e.defaultTimezone }</div>
+
+                  { this.state.isHandset ? <div>
+                    <div className='country-code' style={{ marginBottom: '10px' }}>
+                      Country Code: { e.code }
+                    </div>
+                  </div> : '' }
                 </div>
               </div>
 
-              <div className='right-content'>
+              { !this.state.isHandset ? <div className='right-content'>
                 <div className='country-code'>
                   Country Code: { e.code }
                 </div>
-              </div>
+              </div> : '' }
 
               <div className='status'>
                 <div className='country-status'>
