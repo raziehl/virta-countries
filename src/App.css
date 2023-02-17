@@ -19,12 +19,17 @@
   font-size: 20px;
 }
 
-.container {
+.center-container {
   margin-right: auto;
   margin-left: auto;
   max-width: 1000px;
 }
 
+.left-container {
+  margin-right: auto;
+  margin-left: 23%;
+  max-width: 1000px;
+}
 
 @media only screen and (max-width: 600px) {
   .header {
@@ -35,5 +40,10 @@
 
   .background-svg {
     display: none;
+  }
+
+  .left-container {
+    margin-left: 16.5px;
+    margin-right: 16.5px;
   }
 }

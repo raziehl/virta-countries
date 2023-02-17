@@ -17,7 +17,7 @@ class CountriesComponent extends Component<any, { countries: CountryDto[] }> {
   }
 
   render() {
-    return <div className="countries-component container">
+    return <div className="countries-component left-container">
       <h1>Compatible Countries</h1>
 
 

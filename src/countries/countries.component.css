@@ -1,3 +1,6 @@
+.countries-component {
+  max-width: 608px;
+}
 
 .country {
   display: flex;
@@ -19,12 +22,12 @@
 }
 
 .right-content {
-  flex: 0.2;
+  flex: 0.3;
   
 }
 
 .status {
-  flex: 0.06;
+  flex: 0.1;
 }
 
 .country-flag {
